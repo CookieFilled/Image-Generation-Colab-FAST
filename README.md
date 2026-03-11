@@ -1,7 +1,7 @@
-# Anime Image Generator (Google Colab)
+# Anime Image Generator (Gradio Interface in Google Colab)
 
-Generate anime images directly in Google Colab using a diffusion model.  
-This repository provides a simple notebook that allows you to run the generator without needing to install anything locally.
+This repository provides a Google Colab notebook that launches a **Gradio-based web interface** for generating anime images using a diffusion model.  
+The notebook automatically installs dependencies, downloads the model, and starts an interactive Gradio UI where users can generate images from prompts.
 
 ---
 
@@ -19,76 +19,65 @@ This repository provides a simple notebook that allows you to run the generator 
 
 </p>
 
-All credit for the model goes to the original creators.  
-This repository only provides a notebook interface for running it in Google Colab.
+All credit for the model goes to the original model authors.  
+This repository only provides a notebook and Gradio interface to run the model easily in Google Colab.
 
 ---
 
 ## Features
 
-- Anime image generation
+- Gradio-based web interface
+- Prompt-based anime image generation
 - Runs entirely in Google Colab
+- Automatic dependency installation
 - No local setup required
-- Prompt-based image generation
-- Simple notebook workflow
+- Simple UI for interacting with the model
 
 ---
 
 ## Installation
 
-Follow these steps:
-
 ### 1. Download the Notebook
 
-Download the `.ipynb` file from this repository.
+Download the `.ipynb` notebook file from this repository.
 
 ---
 
 ### 2. Upload to Google Colab
 
-1. Open Google Colab  
-2. Click **Upload Notebook**  
+1. Open **Google Colab**
+2. Click **Upload Notebook**
 3. Upload the downloaded `.ipynb` file
 
 ---
 
 ### 3. Run the Cells
 
-Run the notebook cells from top to bottom.
+Run the notebook cells from **top to bottom**.
 
-The notebook will automatically install dependencies, load the model, and prepare the environment for generating images.
+The notebook will:
 
----
-
-## Recommended Colab Settings
-
-Use the following runtime:
-
-Runtime → Change Runtime Type → GPU → Tesla T4
+1. Install required dependencies
+2. Prepare the environment
+3. Download the model
+4. Launch the **Gradio interface**
 
 ---
 
-## Generating Images
+## Using the Interface
 
-After running all cells:
+After running the notebook:
 
-1. Enter a prompt
-2. Adjust generation settings if needed
-3. Run the generation cell
+1. A **Gradio link/interface** will appear
+2. Open the interface
+3. Enter your prompt
+4. Adjust generation settings if available
+5. Generate images directly from the UI
 
-The generated image will appear in the notebook output.
-
----
-
-## Disclaimer
-
-This repository only provides a notebook to run the model.
-
-The model itself belongs to its original authors.  
-Please respect the model's license and usage terms.
+The generated images will appear inside the Gradio interface.
 
 ---
 
-## License
+## Recommended Colab Runtime
 
-Refer to the model authors' pages for licensing information.
+Use the following runtime configuration:
