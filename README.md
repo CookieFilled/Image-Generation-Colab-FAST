@@ -1,109 +1,144 @@
-# Anime Image Generator
+# Image Generation Colab FAST
 
-This repository provides a Google Colab notebook that launches a Gradio-based web interface for generating anime images with a diffusion model. The notebook is designed to run directly in Colab without local setup and includes the full workflow for checking GPU support, installing required packages, loading the model, and launching the interface.
+Fast Google Colab notebooks for anime and realistic image generation with a Gradio interface.
 
-<p align="center">
-  <a href="https://huggingface.co/cagliostrolab">
-    <img src="https://img.shields.io/badge/Model%20Author-Cagliostro%20Lab-blue?style=for-the-badge&logo=huggingface" alt="Model Author">
-  </a>
-  <a href="https://www.gradio.app/">
-    <img src="https://img.shields.io/badge/Built%20With-Gradio-orange?style=for-the-badge&logo=gradio" alt="Built with Gradio">
-  </a>
-</p>
+[![Gradio](https://img.shields.io/badge/Gradio-Website-orange?style=for-the-badge)](https://www.gradio.app/)
+[![Google Colab](https://img.shields.io/badge/Platform-Google%20Colab-F9AB00?style=for-the-badge&logo=googlecolab&logoColor=black)](https://colab.research.google.com/)
+[![Repository](https://img.shields.io/badge/GitHub-Repository-black?style=for-the-badge&logo=github)](https://github.com/CookieFilled/Image-Generation-Colab-FAST)
+
+This repository contains Google Colab notebooks for launching image generation workflows with a simple Gradio UI. The notebooks are designed for an easy upload-and-run flow in Colab, with GPU checks, package setup, model loading, and a ready-to-use interface.
+
+---
+
+## Models and Tools
+
+[![Animagine XL 3.1](https://img.shields.io/badge/Model-Animagine%20XL%203.1-blue?style=for-the-badge)](https://huggingface.co/cagliostrolab/animagine-xl-3.1)
+[![LUSTIFY v2.0](https://img.shields.io/badge/Model-LUSTIFY%20v2.0-purple?style=for-the-badge)](https://huggingface.co/TheImposterImposters/LUSTIFY-v2.0)
+[![RealVisXL V5.0](https://img.shields.io/badge/Model-RealVisXL%20V5.0-green?style=for-the-badge)](https://huggingface.co/SG161222/RealVisXL_V5.0)
+
+---
+
+## Notebooks
+
+### Anime Generator
+**File:** `anime_nsfw_generator_v4.ipynb`  
+Anime-focused image generation using Animagine XL 3.1.
+
+[![Open in Colab](https://img.shields.io/badge/Open%20in-Colab-F9AB00?style=for-the-badge&logo=googlecolab&logoColor=black)](https://colab.research.google.com/github/CookieFilled/Image-Generation-Colab-FAST/blob/main/anime_nsfw_generator_v4.ipynb)
+
+### Realistic Generator
+**File:** `realistic_nsfw_generator_v1.ipynb`  
+Photorealistic image generation powered by LUSTIFY v2.0.
+
+[![Open in Colab](https://img.shields.io/badge/Open%20in-Colab-F9AB00?style=for-the-badge&logo=googlecolab&logoColor=black)](https://colab.research.google.com/github/CookieFilled/Image-Generation-Colab-FAST/blob/main/realistic_nsfw_generator_v1.ipynb)
+
+### RealVisXL Generator
+**File:** `realvisxl_nsfw_generator.ipynb`  
+Realism-focused image generation using RealVisXL V5.0.
+
+[![Open in Colab](https://img.shields.io/badge/Open%20in-Colab-F9AB00?style=for-the-badge&logo=googlecolab&logoColor=black)](https://colab.research.google.com/github/CookieFilled/Image-Generation-Colab-FAST/blob/main/realvisxl_nsfw_generator.ipynb)
+
+### Additional Notebooks
+- `roleplay_companion_final (1).ipynb`
+- `roleplay_companion_v3 (1).ipynb`
+
+---
 
 ## Features
 
-- Gradio-based image generation interface
 - Runs entirely in Google Colab
+- Gradio-based web UI
 - No local installation required
-- Prompt-based anime image generation
-- Multiple resolution options
-- Seed control for reproducible results
-- Optional save to Google Drive
-- Public Gradio share link when launched in Colab
+- T4 GPU-friendly setup
+- Guided notebook flow with clearly separated steps
+- Cached model loading after first download
+- Prompt, negative prompt, steps, CFG, resolution, and seed controls
+- Optional Google Drive saving in supported notebooks
+- Public Gradio share link when launched from Colab
 
-## Installation
+---
 
-### 1. Download the notebook
+## Quick Start
 
-Download the `.ipynb` file from this repository.
+### 1. Pick a notebook
+Choose the notebook that matches the style you want:
+- `anime_nsfw_generator_v4.ipynb` for anime-style outputs
+- `realistic_nsfw_generator_v1.ipynb` for realistic outputs
+- `realvisxl_nsfw_generator.ipynb` for another realism-focused workflow
 
-### 2. Upload it to Google Colab
+### 2. Open it in Google Colab
+Use the **Open in Colab** button above, or download the notebook and upload it manually to Colab.
 
-- Open Google Colab
-- Click **Upload Notebook**
-- Select the downloaded notebook file
+### 3. Enable GPU
+In Colab, use:
 
-### 3. Run the cells in order
+`Runtime -> Change runtime type -> T4 GPU`
 
-Run the notebook cells from top to bottom.
+### 4. Run cells in order
+Run the cells from top to bottom exactly as shown in the notebook.
 
-The notebook workflow is:
+The main notebooks follow this flow:
 
-1. **GPU Check**  
-   Confirms that a compatible GPU is attached.
+1. **GPU Check**
+2. **Install**
+3. **Verify**
+4. **Load Model**
+5. **Launch UI**
 
-2. **Install**  
-   Installs the required Python packages used by the notebook.
-
-3. **Verify**  
-   Checks that the required imports work correctly after installation.
-
-4. **Load Model**  
-   Downloads and loads the model into GPU memory.
-
-5. **Launch UI**  
-   Starts the Gradio interface for image generation.
+---
 
 ## Important Notes
 
-- Run the cells in the exact order shown in the notebook.
-- After the install cell, Colab may restart the session. This is expected.
-- Once the final cell runs, the Gradio interface will appear in the notebook.
-- A public share link is also created when the interface launches.
+- Run the cells in the exact order shown
+- After the install cell, Colab may restart the kernel or show a session crashed popup
+- This behavior is expected in these notebooks
+- After restart, continue from the verify cell
+- Do not re-run the install cell unnecessarily
 
-## Recommended Colab Runtime
-
-Use this runtime setting in Google Colab:
-
-`Runtime -> Change runtime type -> GPU`
-
-A T4 GPU is recommended for the notebook.
+---
 
 ## How to Use
 
-After the interface launches:
+After the UI launches:
 
-1. Enter a positive prompt
-2. Enter a negative prompt
+1. Enter your prompt
+2. Add a negative prompt if needed
 3. Choose a resolution
-4. Adjust steps, CFG scale, and seed if needed
-5. Click the generate button
+4. Adjust steps, CFG, and seed
+5. Click generate
 
-The generated image will appear in the Gradio interface.
+The generated image will appear directly in the Gradio interface.
 
-## Prompting
+---
 
-The interface is built for tag-based prompting. It works best with comma-separated tags instead of long natural-language sentences.
+## Recommended Runtime
 
-You can also use:
+Use a **T4 GPU** in Google Colab for the intended workflow.
 
-- positive prompts for what you want
-- negative prompts for what you want to avoid
-- seed values for repeatable outputs
+---
 
-## Saving Images
+## Troubleshooting
 
-Generated images are saved inside the Colab environment.
+### No GPU found
+Make sure your Colab runtime is set to **T4 GPU**.
 
-The notebook also includes an option to save images to Google Drive if Drive is mounted.
+### Session restarted after install
+This is expected. Click **OK** and continue from the next verification step.
 
-## Disclaimer
+### Gradio UI not showing
+Make sure the model loaded correctly, then re-run only the final UI cell.
 
-This repository only provides a Colab notebook and Gradio interface for running the model.
+### Slow first launch
+The first run downloads model files. Later runs are faster because cached files are reused.
 
-All credit for the model goes to the original model authors. Please follow the model authors' licensing and usage terms.
+---
 
-## License
+## Repository Structure
 
-Refer to the model authors' pages for license and usage information.
+```text
+README.md
+anime_nsfw_generator_v4.ipynb
+realistic_nsfw_generator_v1.ipynb
+realvisxl_nsfw_generator.ipynb
+roleplay_companion_final (1).ipynb
+roleplay_companion_v3 (1).ipynb
